@@ -33,7 +33,7 @@ def submit_file():
             return render_template('index.html',image=filename)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False,host='0.0.0.0')
 
 
 # put the model in main file
