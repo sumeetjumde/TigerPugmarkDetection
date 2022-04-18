@@ -1,0 +1,31 @@
+<!doctype html>
+<title>PUGMARKS</title>
+<h2>Select an image file to upload</h2>
+<p>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        Label: {{ messages[0] }}
+        Accuracy: {{ messages[1] }}
+        {% endif %}
+    {% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+	<p>
+		<input type="file" name="file" autocomplete="off" required>
+	</p>
+    </dl>
+    <p>
+	<input type="submit" value="Submit">
+    </p>
+</form>
+<p>
+    {% if image %}
+        <h1>{{image}}</h1>
+        <img src = "{{url_for('static',filename = image)}}" alt= "zxc" />
+    {% endif %}
+</p>
+
+
+
+
